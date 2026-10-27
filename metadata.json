@@ -1,0 +1,6 @@
+{
+  "name": "Mobile Fighter Arcade & Python Studio",
+  "description": "An arcade fighting game and Kivy Python mobile project suite with AI fighter creation and buildozer export guides.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
