@@ -6,6 +6,7 @@ import { CharacterSelect } from './components/CharacterSelect';
 import { ArcadeArena } from './components/ArcadeArena';
 import { AIFighterCreator } from './components/AIFighterCreator';
 import { PythonKivyExplorer } from './components/PythonKivyExplorer';
+import { DeploymentChecklist } from './components/DeploymentChecklist';
 
 export default function App() {
   const [currentTab, setTab] = useState<AppTab>('select');
@@ -61,6 +62,10 @@ export default function App() {
 
         {currentTab === 'kivy' && (
           <PythonKivyExplorer />
+        )}
+
+        {currentTab === 'checklist' && (
+          <DeploymentChecklist />
         )}
       </main>
     </div>

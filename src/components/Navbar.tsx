@@ -1,7 +1,7 @@
 import React from 'react';
 import { AppTab } from '../types';
 import { soundManager } from '../utils/audio';
-import { Swords, UserPlus, Code2, Users, Volume2, VolumeX } from 'lucide-react';
+import { Swords, UserPlus, Code2, Users, Volume2, VolumeX, ShieldCheck } from 'lucide-react';
 
 interface NavbarProps {
   currentTab: AppTab;
@@ -28,51 +28,60 @@ export const Navbar: React.FC<NavbarProps> = ({ currentTab, setTab, soundEnabled
         </div>
         <div>
           <span className="text-lg font-bold tracking-tight text-white whitespace-nowrap shrink-0 block">
-            Mobile Fighter
+            Yemen Battle
           </span>
           <span className="text-[10px] text-red-400 font-mono tracking-widest uppercase block">
-            Arcade & Python Studio
+            Kivy Mobile Studio
           </span>
         </div>
       </div>
 
-      {/* Zone 2: 4-5 clean single-line text navigation links */}
-      <nav className="hidden md:flex items-center gap-6 text-sm font-medium text-slate-400">
+      {/* Zone 2: 5 clean single-line text navigation links */}
+      <nav className="hidden md:flex items-center gap-5 text-sm font-medium text-slate-400">
         <button
           onClick={() => { soundManager.playMenuClick(); setTab('select'); }}
-          className={`hover:text-white transition-colors whitespace-nowrap shrink-0 flex items-center gap-2 ${
+          className={`hover:text-white transition-colors whitespace-nowrap shrink-0 flex items-center gap-1.5 ${
             currentTab === 'select' ? 'text-red-400 font-semibold' : ''
           }`}
         >
           <Users className="w-4 h-4" />
-          <span>Fighter Roster</span>
+          <span>Roster</span>
         </button>
         <button
           onClick={() => { soundManager.playMenuClick(); setTab('arena'); }}
-          className={`hover:text-white transition-colors whitespace-nowrap shrink-0 flex items-center gap-2 ${
+          className={`hover:text-white transition-colors whitespace-nowrap shrink-0 flex items-center gap-1.5 ${
             currentTab === 'arena' ? 'text-red-400 font-semibold' : ''
           }`}
         >
           <Swords className="w-4 h-4" />
-          <span>Arcade Arena</span>
+          <span>Arena</span>
         </button>
         <button
           onClick={() => { soundManager.playMenuClick(); setTab('creator'); }}
-          className={`hover:text-white transition-colors whitespace-nowrap shrink-0 flex items-center gap-2 ${
+          className={`hover:text-white transition-colors whitespace-nowrap shrink-0 flex items-center gap-1.5 ${
             currentTab === 'creator' ? 'text-red-400 font-semibold' : ''
           }`}
         >
           <UserPlus className="w-4 h-4" />
-          <span>AI Fighter Creator</span>
+          <span>AI Creator</span>
         </button>
         <button
           onClick={() => { soundManager.playMenuClick(); setTab('kivy'); }}
-          className={`hover:text-white transition-colors whitespace-nowrap shrink-0 flex items-center gap-2 ${
+          className={`hover:text-white transition-colors whitespace-nowrap shrink-0 flex items-center gap-1.5 ${
             currentTab === 'kivy' ? 'text-red-400 font-semibold' : ''
           }`}
         >
           <Code2 className="w-4 h-4" />
-          <span>Kivy Mobile Project</span>
+          <span>Python Files</span>
+        </button>
+        <button
+          onClick={() => { soundManager.playMenuClick(); setTab('checklist'); }}
+          className={`hover:text-white transition-colors whitespace-nowrap shrink-0 flex items-center gap-1.5 ${
+            currentTab === 'checklist' ? 'text-emerald-400 font-semibold' : ''
+          }`}
+        >
+          <ShieldCheck className="w-4 h-4" />
+          <span>Deploy Guide</span>
         </button>
       </nav>
 
@@ -87,10 +96,10 @@ export const Navbar: React.FC<NavbarProps> = ({ currentTab, setTab, soundEnabled
           <span className="hidden sm:inline">{soundEnabled ? 'Audio On' : 'Muted'}</span>
         </button>
         <button
-          onClick={() => { soundManager.playMenuClick(); setTab('arena'); }}
-          className="px-4 py-2 text-xs font-semibold text-white bg-gradient-to-r from-red-600 to-amber-600 rounded-xl hover:from-red-500 hover:to-amber-500 transition-all shadow-lg shadow-red-600/30 whitespace-nowrap shrink-0"
+          onClick={() => { soundManager.playMenuClick(); setTab('checklist'); }}
+          className="px-4 py-2 text-xs font-semibold text-white bg-gradient-to-r from-emerald-600 to-cyan-600 rounded-xl hover:from-emerald-500 hover:to-cyan-500 transition-all shadow-lg shadow-emerald-600/30 whitespace-nowrap shrink-0"
         >
-          Quick Fight
+          Deploy APK
         </button>
       </div>
     </header>

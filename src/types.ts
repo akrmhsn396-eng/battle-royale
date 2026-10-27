@@ -1,6 +1,6 @@
 export type GameMode = 'arcade' | 'versus' | 'training';
 
-export type AppTab = 'arena' | 'select' | 'creator' | 'kivy';
+export type AppTab = 'arena' | 'select' | 'creator' | 'kivy' | 'checklist';
 
 export interface Fighter {
   id: string;
